@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Extended by Enchanted | Lash & Beauty Studio Langley</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Extended by Enchanted is a luxury lash & beauty studio in Langley, BC specializing in soft glam lash extensions, wispy sets, lash lifts, and brows. Book online.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-alt: #111111;
+      --bg-light: #f5eee5;
+      --bg-light-soft: #f2e3d0;
+      --accent: #d7b46a;
+      --accent-soft: rgba(215, 180, 106, 0.18);
+      --text-main: #f7f7f7;
+      --text-muted: #b5b5b5;
+      --text-dark: #2a2620;
+      --border-soft: #2a2a2a;
+      --border-light: #e3d4c1;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.6);
+      --max-width: 1150px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: radial-gradient(circle at top left, #202020 0, #050505 45%);
+      color: var(--text-main);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.4rem;
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px);
+      background: rgba(5, 5, 5, 0.94);
+      border-bottom: 1px solid rgba(215, 180, 106, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus { color: var(--accent); }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus::after { width: 100%; }
+
+    .nav-cta {
+      border: 1px solid var(--accent);
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--text-main);
+      font-size: 1.6rem;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #050505f2;
+        padding: 1rem 1.5rem;
+        border-left: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+        min-width: 220px;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .nav-cta { margin-top: 0.7rem; }
+    }
+
+    /* Hero */
+    .hero { padding: 4.2rem 0 3.5rem; }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span { color: var(--accent); }
+
+    .hero-body {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 34rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.7rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f3c777);
+      color: #111;
+      border: none;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-primary:hover { opacity: 0.96; }
+
+    .btn-outline {
+      border: 1px solid var(--border-soft);
+      color: var(--text-main);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-badge {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 0.35rem 0.8rem;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1b1b1b 0, #080808 55%);
+      border-radius: 1.3rem;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid var(--accent-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-card-main {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card-text {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-stat {
+      padding: 0.7rem 0.75rem;
+      border-radius: 0.7rem;
+      border: 1px solid var(--border-soft);
+      background: #050505;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.3rem; }
+    }
+
+    /* Sections */
+    section { padding: 3.5rem 0; }
+
+    .section-header {
+      margin-bottom: 2.1rem;
+      text-align: left;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.7rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 34rem;
+    }
+
+    .section--light {
+      background: linear-gradient(to bottom, #f5eee5, #f2e3d0);
+      color: var(--text-dark);
+    }
+
+    .section--light .section-label { color: #b6934f; }
+    .section--light .section-title { color: #3b3226; }
+    .section--light .section-subtitle { color: #6b5a45; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: rgba(10, 10, 10, 0.92);
+      padding: 1.2rem 1.2rem 1.1rem;
+    }
+
+    .service-name {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .service-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .service-price {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Best sellers strip */
+    .bestsellers-strip {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 0.9rem;
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at left, rgba(215, 180, 106, 0.14), transparent 60%);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .bestsellers-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: var(--accent);
+    }
+
+    .bestsellers-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .bestsellers-tag {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .review-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: #080808;
+      padding: 1.1rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .review-name {
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .review-stars {
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .review-caption {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #7f7f7f;
+    }
+
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Review form */
+    .review-form {
+      margin-top: 2.2rem;
+      padding: 1.2rem 1.4rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.6);
+      color: #3a3024;
+    }
+
+    .review-form h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .review-form p {
+      font-size: 0.85rem;
+      margin-bottom: 0.9rem;
+      color: #6b5a45;
+    }
+
+    .review-form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .review-form label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .review-form input,
+    .review-form textarea,
+    .review-form select {
+      width: 100%;
+      padding: 0.55rem 0.6rem;
+      border-radius: 0.6rem;
+      border: 1px solid #ddc9ac;
+      background: #fffaf4;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+
+    .review-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .review-form button {
+      margin-top: 0.9rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.6rem 1.3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      background: linear-gradient(135deg, #d7b46a, #f3c777);
+      color: #111;
+    }
+
+    .review-form button:hover { opacity: 0.95; }
+
+    @media (max-width: 640px) {
+      .review-form-row { grid-template-columns: 1fr; }
+    }
+
+    /* Booking */
+    .booking-wrapper {
+      border-radius: 1.1rem;
+      border: 1px solid var(--accent-soft);
+      background: radial-gradient(circle at top, #151515 0, #050505 45%);
+      padding: 1.5rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-note {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .booking-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .booking-policy {
+      font-size: 0.78rem;
+      color: #9a8e76;
+      line-height: 1.5;
+    }
+
+    .booking-iframe {
+      width: 100%;
+      min-height: 650px;
+      border: none;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      background: #111;
+      margin-top: 1.4rem;
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .about-highlight {
+      border-left: 2px solid var(--accent);
+      padding-left: 0.85rem;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .about-card {
+      border-radius: 1rem;
+      border: 1px solid var(--border-soft);
+      background: #080808;
+      padding: 1.1rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .about-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .about-taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .about-tag {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; }
+    }
+
+    /* FAQ / Policies */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-q {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #3a3024;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-a {
+      font-size: 0.86rem;
+      color: #6b5a45;
+    }
+
+    .policy-card {
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1rem 1.1rem;
+      font-size: 0.84rem;
+      color: #5a4b39;
+    }
+
+    .policy-card h4 {
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      color: #3a3024;
+    }
+
+    /* Contact / Footer */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2rem;
+    }
+
+    .contact-item {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-item strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .contact-links a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.2rem 0 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid,
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          EXTENDED BY <span>ENCHANTED</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        <ul class="nav-links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#booking">Booking</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">Langley, BC · Lash & Beauty Studio</div>
+            <h1 class="hero-title">
+              Luxury, long-lasting <span>lash extensions</span><br />for the soft glam girl.
+            </h1>
+            <p class="hero-body">
+              Extended by Enchanted is a boutique lash studio specializing in soft, wispy and ultra-flattering sets that
+              actually suit your face and lifestyle. No stiff, clumpy lashes – just custom-mapped eyes that make you feel expensive.
+            </p>
+            <div class="hero-cta-row">
+              <!-- Acuity booking link -->
+              <a href="https://extendedbyenchanted.as.me" class="btn-primary" target="_blank" rel="noopener">
+                Book Now
+              </a>
+              <a href="#services" class="btn-outline">View Services</a>
+            </div>
+            <div class="hero-badges">
+              <span class="hero-badge">6+ years lashing experience</span>
+              <span class="hero-badge">Specializing in wispy & brown lash sets</span>
+              <span class="hero-badge">Judgment-free, cozy studio vibes</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-title">Signature studio</div>
+            <div class="hero-card-main">Extended by Enchanted</div>
+            <p class="hero-card-text">
+              A private, luxury beauty room located inside a modern nail salon in Langley. Free parking, cozy blankets,
+              soft music, and a calm space where you can nap, vent, or just exist.
+            </p>
+            <div class="hero-grid">
+              <div class="hero-stat">
+                <strong>Customized maps</strong>
+                Every set is designed around your eye shape, natural lashes, and lifestyle – not just a one-size-fits-all curl.
+              </div>
+              <div class="hero-stat">
+                <strong>Retention-focused</strong>
+                Gentle application, quality products, and honest aftercare so your lashes last and your naturals stay healthy.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Services</div>
+          <h2 class="section-title">Lashes & beauty treatments</h2>
+          <p class="section-subtitle">
+            All sets are fully customized to your eye shape, lash health, and desired vibe – from soft everyday glam to full-on dramatic.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Core lash sets -->
+          <article class="service-card">
+            <h3 class="service-name">Classic Lashes</h3>
+            <p class="service-desc">
+              One extension per natural lash for a clean, soft mascara look. Perfect for first-timers or “quiet luxury” girlies.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$100</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Hybrid Lashes</h3>
+            <p class="service-desc">
+              A mix of classic + volume for soft, fluffy dimension. Ideal for everyday glam without going too bold.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$110</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Light Volume</h3>
+            <p class="service-desc">
+              Airy volume fans for a fuller but still lightweight look. Great step up from hybrid if you want more drama.
+            </p>
+            <div class="service-meta">
+              <span>1 hr 55 min</span>
+              <span class="service-price">$120</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Volume Lashes</h3>
+            <p class="service-desc">
+              Fluffier, darker, and more dramatic while still styled to your features. Perfect for every day baddie energy.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$125</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Signature Wispy Set</h3>
+            <p class="service-desc">
+              Soft, fluttery, romantic lashes designed for everyday luxury ✨ A curated lash experience for those who love effortless glam.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$130</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Angel Set (deposit required)</h3>
+            <p class="service-desc">
+              Light, airy, angelic lashes with subtle texture. $15 non-refundable deposit due at booking.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$110</span>
+            </div>
+          </article>
+
+          <!-- Specialty lash sets -->
+          <article class="service-card">
+            <h3 class="service-name">Brunette Boost Lash Set (deposit)</h3>
+            <p class="service-desc">
+              Brunette-friendly, softer tones with depth that flatters brown eyes and deeper features. $15 deposit required.
+            </p>
+            <div class="service-meta">
+              <span>2 hours</span>
+              <span class="service-price">$115</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Half Lash Set</h3>
+            <p class="service-desc">
+              Customized outer-corner lift to enhance your natural shape. Perfect for first timers or a soft cat-eye.
+            </p>
+            <div class="service-meta">
+              <span>1 hr 25 min</span>
+              <span class="service-price">$75</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Custom Lash Set (deposit)</h3>
+            <p class="service-desc">
+              Fully tailored set built from scratch around your features and inspo pics. $15 non-refundable deposit required.
+            </p>
+            <div class="service-meta">
+              <span>2 hr 15 min</span>
+              <span class="service-price">$120</span>
+            </div>
+          </article>
+
+          <!-- Fills -->
+          <article class="service-card">
+            <h3 class="service-name">Classic Fill (deposit)</h3>
+            <p class="service-desc">
+              Refresh your classic set within your fill window. $15 deposit required to secure your spot.
+            </p>
+            <div class="service-meta">
+              <span>1 hour</span>
+              <span class="service-price">$70</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Hybrid Fill (deposit)</h3>
+            <p class="service-desc">
+              Maintain your hybrid lashes with a balanced top-up. $15 non-refundable deposit required.
+            </p>
+            <div class="service-meta">
+              <span>1 hour</span>
+              <span class="service-price">$75</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Volume or Wispy Fill (deposit)</h3>
+            <p class="service-desc">
+              For volume or wispy sets within your fill time frame. $15 deposit required.
+            </p>
+            <div class="service-meta">
+              <span>1 hr 30 min</span>
+              <span class="service-price">$85</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Angel Set Fill</h3>
+            <p class="service-desc">
+              Top up your Angel set to keep it light, fluffy, and fresh.
+            </p>
+            <div class="service-meta">
+              <span>1 hour</span>
+              <span class="service-price">$75</span>
+            </div>
+          </article>
+
+          <!-- Lifts & brows -->
+          <article class="service-card">
+            <h3 class="service-name">Lash Lift</h3>
+            <p class="service-desc">
+              Natural lashes lifted for weeks of low-maintenance curl. Great alternative if you don’t want extensions.
+            </p>
+            <div class="service-meta">
+              <span>45 min</span>
+              <span class="service-price">$65</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Lash Lift & Tint</h3>
+            <p class="service-desc">
+              Lift plus tint for a mascara-like look without makeup. Perfect for vacations or gym girlies.
+            </p>
+            <div class="service-meta">
+              <span>45 min</span>
+              <span class="service-price">$70</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Brow Lamination + Tint</h3>
+            <p class="service-desc">
+              Fluffy, shaped brows with a soft tint to frame your face and tie everything together.
+            </p>
+            <div class="service-meta">
+              <span>45 min</span>
+              <span class="service-price">$70</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Brow Tint</h3>
+            <p class="service-desc">
+              Define and darken your brows for a fuller but natural look.
+            </p>
+            <div class="service-meta">
+              <span>30 min</span>
+              <span class="service-price">$35</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Brow Lamination</h3>
+            <p class="service-desc">
+              Smooth, lifted brows that stay in place all day for that brushed-up editorial look.
+            </p>
+            <div class="service-meta">
+              <span>30 min</span>
+              <span class="service-price">$65</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-name">Lash Lift & Brow Lamination</h3>
+            <p class="service-desc">
+              Bundle: lifted lashes + laminated brows for the ultimate low-maintenance glow-up.
+            </p>
+            <div class="service-meta">
+              <span>1 hour</span>
+              <span class="service-price">$125</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="bestsellers-strip">
+          <div class="bestsellers-label">Best sellers</div>
+          <div class="bestsellers-tags">
+            <span class="bestsellers-tag">Signature Wispy Set</span>
+            <span class="bestsellers-tag">Brown / Brunette Boost sets</span>
+            <span class="bestsellers-tag">Hybrid + Light Volume</span>
+            <span class="bestsellers-tag">Lash Lift & Tint</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section--light">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Client Love</div>
+          <h2 class="section-title">Real reviews from enchanted clients</h2>
+          <p class="section-subtitle">
+            Honest feedback from the girls who trusted me with their lashes, brows, and special event glam.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Aman K.</div>
+            <p>
+              “Literally the best lashes I’ve ever had. They still looked good at week 3 and I got so many compliments.
+              The room is super cozy and she made me feel comfortable the whole time.”
+            </p>
+            <div class="review-caption">Classic & hybrid sets</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Simran G.</div>
+            <p>
+              “I showed her a photo and she recreated the vibe but BETTER for my eye shape. No burning, no redness,
+              and she was so gentle. I literally napped the whole time.”
+            </p>
+            <div class="review-caption">Brown wispy set</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Jaspreet B.</div>
+            <p>
+              “I normally hate looking too dramatic, but the set she did on me was the perfect soft glam.
+              I woke up looking put together without trying.”
+            </p>
+            <div class="review-caption">Soft glam volume</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Navpreet M.</div>
+            <p>
+              “She did my birthday set and my sister’s wedding set — both lasted the entire week.
+              She’s honestly an artist and also so easy to talk to.”
+            </p>
+            <div class="review-caption">Event lashes</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Rupinder S.</div>
+            <p>
+              “So soft, so fluffy, and they never feel heavy. I get compliments every single day.
+              This is the only place I trust for my lashes now.”
+            </p>
+            <div class="review-caption">Regular fills</div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Mandeep K.</div>
+            <p>
+              “I was nervous because of my sensitive eyes, but she explained everything and checked in the whole time.
+              No burning at all and retention was crazy good.”
+            </p>
+            <div class="review-caption">Sensitive eyes</div>
+          </article>
+        </div>
+
+        <!-- Review form -->
+        <div class="review-form">
+          <h3>Leave a review</h3>
+          <p>
+            Had a service with me recently? I’d love to hear your feedback. Your review may be featured on this page
+            (first name only).
+          </p>
+
+          <!-- This sends their review straight to your email -->
+          <form action="mailto:enchanteddiamonddesigns@gmail.com" method="post" enctype="text/plain">
+            <div class="review-form-row">
+              <div>
+                <label for="review-name">Name</label>
+                <input type="text" id="review-name" name="Name" placeholder="Your first name" required />
+              </div>
+              <div>
+                <label for="review-service">Service</label>
+                <input type="text" id="review-service" name="Service"
+                       placeholder="e.g. Brown wispy hybrid set" />
+              </div>
+            </div>
+
+            <div style="margin-top:0.8rem;">
+              <label for="review-rating">Rating</label>
+              <select id="review-rating" name="Rating" required>
+                <option value="">Select...</option>
+                <option>★★★★★</option>
+                <option>★★★★☆</option>
+                <option>★★★☆☆</option>
+              </select>
+            </div>
+
+            <div style="margin-top:0.8rem;">
+              <label for="review-message">Your review</label>
+              <textarea id="review-message" name="Review" placeholder="Share your experience..." required></textarea>
+            </div>
+
+            <button type="submit">Submit review</button>
+          </form>
+
+          <p style="font-size:0.75rem; margin-top:0.6rem; color:#8a765a;">
+            By submitting, you agree that your first name and review may be used on this website and social media.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Booking</div>
+          <h2 class="section-title">Ready to book your set?</h2>
+          <p class="section-subtitle">
+            Booking is handled securely through my online system. Choose your service, pick a time, and pay your deposit to lock it in.
+          </p>
+        </div>
+
+        <div class="booking-wrapper">
+          <p class="booking-note">
+            All appointments are booked online through Acuity. A small, non-refundable deposit is required on certain services
+            (as listed in the service name). The remaining balance is due at your appointment.
+          </p>
+
+          <div class="booking-cta-row">
+            <!-- This button opens your Acuity booking page with all the services you screenshotted -->
+            <a href="https://extendedbyenchanted.as.me" target="_blank" rel="noopener" class="btn-primary">
+              Open booking calendar
+            </a>
+            <a href="#faq" class="btn-outline">View policies</a>
+          </div>
+
+          <p class="booking-policy">
+            By booking, you agree to the studio policies including late, cancellation, and no-show terms.
+            If you need to reschedule, please do so within your allowed notice window so your deposit can transfer.
+          </p>
+
+          <!-- If you ever get Acuity embed code, paste it here:
+          <iframe src="YOUR-ACUITY-EMBED-URL" class="booking-iframe"></iframe>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">About</div>
+          <h2 class="section-title">Meet the face behind Extended by Enchanted</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              Hi, I’m Harleen – the lash artist behind Extended by Enchanted. With over 6 years of experience,
+              I built this studio around one main idea: lashes should make you feel more like yourself, not like you’re wearing a mask.
+            </p>
+            <p>
+              I’m obsessed with custom-mapping, soft glam, and building sets that actually last without wrecking your natural lashes.
+              Whether you’re a busy student, working full-time, or getting ready for a big event, my goal is to make you feel expensive,
+              put-together, and still comfortable.
+            </p>
+            <p>
+              This studio is a safe space – you can show up tired, barefaced, and in sweats. You’ll leave with lashes that match
+              your vibe and a little extra confidence (and probably a selfie).
+            </p>
+            <div class="about-highlight">
+              “My clients don’t just get lashes – they get a quiet moment to breathe, vent, nap, and feel taken care of.”
+            </div>
+          </div>
+
+          <aside class="about-card">
+            <h4>What you can expect</h4>
+            <p>
+              ✧ Clean, professional setup<br />
+              ✧ Honest aftercare & retention tips<br />
+              ✧ Customized styling for your features<br />
+              ✧ No judgment, no rush, no weird energy
+            </p>
+            <div class="about-taglist">
+              <span class="about-tag">Soft glam specialist</span>
+              <span class="about-tag">Wispy & brown sets</span>
+              <span class="about-tag">Calm studio vibes</span>
+              <span class="about-tag">Education-focused</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Policies -->
+    <section id="faq" class="section--light">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Policies</div>
+          <h2 class="section-title">FAQ & booking policies</h2>
+          <p class="section-subtitle">
+            Please read before booking so you know exactly what to expect.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div>
+            <div class="faq-item">
+              <div class="faq-q">Do I need a deposit to book?</div>
+              <div class="faq-a">
+                Some services require a small non-refundable deposit (shown in the service name). It goes toward your total
+                and the remaining balance is due at the appointment.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">What is your cancellation policy?</div>
+              <div class="faq-a">
+                You can reschedule your appointment once within your notice window (set in Acuity – e.g. 24–48 hours).
+                Late cancellations or no-shows will forfeit the deposit.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Can I come with mascara or strip lash glue on?</div>
+              <div class="faq-a">
+                Please arrive with clean, makeup-free eyes to get the best retention.
+                Arriving with heavy eye makeup or strip glue may cut into your lashing time.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q">Do you accept foreign fills?</div>
+              <div class="faq-a">
+                This depends on the condition of your current set. Please message me photos of your lashes before booking,
+                or book a removal + fresh set for the best result.
+              </div>
+            </div>
+          </div>
+
+          <aside class="policy-card">
+            <h4>Studio reminders</h4>
+            <p>
+              ✧ Please arrive on time so we can use your full appointment for lashing.<br />
+              ✧ If you are more than 15 minutes late, your appointment may need to be rescheduled and your deposit may be forfeited.<br />
+              ✧ No extra guests or children in the treatment room for safety and comfort reasons.<br />
+              ✧ If you have any eye infections, irritation, or recent surgery, please wait until fully healed before booking.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Find us & get in touch</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-item">
+              <strong>Location:</strong><br />
+              Inside [Nail Salon Name]<br />
+              [Street Address]<br />
+              Langley, BC
+            </div>
+            <div class="contact-item">
+              <strong>Parking:</strong><br />
+              Free parking available on site.
+            </div>
+            <div class="contact-item">
+              <strong>Studio Hours:</strong><br />
+              By appointment only.
+            </div>
+          </div>
+
+          <div class="contact-links">
+            <div class="contact-item">
+              <strong>Phone / Text:</strong><br />
+              <a href="tel:17782394368">778-239-4368</a>
+            </div>
+            <div class="contact-item">
+              <strong>Email:</strong><br />
+              <a href="mailto:enchanteddiamonddesigns@gmail.com">enchanteddiamonddesigns@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <strong>Instagram:</strong><br />
+              <a href="https://instagram.com/extendedbyenchanted" target="_blank" rel="noopener">@extendedbyenchanted</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Extended by Enchanted · All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".nav-toggle");
+      const links = document.querySelector(".nav-links");
+      if (toggle && links) {
+        toggle.addEventListener("click", () => {
+          links.classList.toggle("open");
+        });
+      }
+
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>
